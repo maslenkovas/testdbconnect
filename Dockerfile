@@ -4,10 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pwd
-RUN npm init --yes
 RUN npm install
-RUN cat package.json
 RUN npm run build
 
 EXPOSE 80
