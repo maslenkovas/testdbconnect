@@ -5,6 +5,7 @@ WORKDIR /app
 COPY . /app
 
 RUN npm install
+RUN cat package.json
 RUN npm run build
 
 EXPOSE 80
