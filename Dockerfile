@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
+RUN pwd
 RUN npm init --yes
 RUN npm install
 RUN npm install webpack webpack-cli --save-dev
