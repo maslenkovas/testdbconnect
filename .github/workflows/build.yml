@@ -1,13 +1,6 @@
 name: Build and Push to Docker Hub
 on: push
 jobs:
-    install_package:
-        
-        name: Install Packages
-        runs-on: ubuntu-latest
-        steps:
-          - name: Install nmp
-            run: npm install
     build-container:
         permissions: write-all
         name: Build Docker container
