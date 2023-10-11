@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
+RUN init --yes
 RUN npm install
 RUN cat package.json
 RUN npm run build
