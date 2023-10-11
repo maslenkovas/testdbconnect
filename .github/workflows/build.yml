@@ -13,17 +13,17 @@ jobs:
               with: 
                 username: ${{ secrets.DOCKER_HUB_USERNAME }}
                 password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-            - name: Build Docker image
-              run: docker build -t maslenkovaso/testdbconnect .
-            - name: Push Docker image to container registry
-              run: docker push maslenkovaso/testdbconnect
-              env:
-                DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+            # - name: Build Docker image
+            #   run: docker build -t maslenkovaso/testdbconnect .
+            # - name: Push Docker image to container registry
+            #   run: docker push maslenkovaso/testdbconnect
+            #   env:
+            #     DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-            # - name: Build and Push to Docker Hub
-            #   uses: docker/build-push-action@v5
-            #   with:
-            #     context: .
-            #     file: ./Dockerfile
-            #     push: true
-            #     tags: maslenkovaso/testdbconnect:latest
+            - name: Build and Push to Docker Hub
+              uses: docker/build-push-action@v5
+              with:
+                context: .
+                file: ./Dockerfile
+                push: true
+                tags: maslenkovaso/testdbconnect:latest
