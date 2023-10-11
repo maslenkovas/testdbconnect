@@ -15,7 +15,7 @@ jobs:
                 password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
             - name: Build Docker image
               run: docker build -t maslenkovaso/testdbconnect .
-            - name: 
+            - name: Push Docker image to container registry
               run: docker push maslenkovaso/testdbconnect
               env:
                 DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
